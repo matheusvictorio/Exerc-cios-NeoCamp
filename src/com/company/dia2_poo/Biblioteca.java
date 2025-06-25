@@ -1,6 +1,7 @@
 package com.company.dia2_poo;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Biblioteca {
     ArrayList<Livro> livros = new ArrayList<>();
@@ -14,5 +15,12 @@ public class Biblioteca {
             l.exibirDetalhes();
             System.out.println("\n");
         }
+    }
+
+    public Optional<Livro> buscarLivro(String titulo) {
+        return livros.stream()
+                .filter(l -> l.getTitulo()
+                        .equalsIgnoreCase(titulo))
+                .findFirst();
     }
 }
