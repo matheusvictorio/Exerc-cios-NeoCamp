@@ -27,5 +27,13 @@ public class Main {
         } else {
             System.out.println("Livro não encontrado!");
         }
+
+        System.out.println("\n");
+        Livro revista = new Revista("Revista", "Autor revista", 2018, 12);
+        revista.exibirDetalhes();
+        // por conta do polimorfismo não foi necessário nenhuma modificação
+        biblioteca.adicionarLivro(revista);
+        System.out.println("\nLivros na biblioteca:");
+        biblioteca.listarLivros();
     }
 }
