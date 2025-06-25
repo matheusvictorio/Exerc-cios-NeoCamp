@@ -1,6 +1,6 @@
 package com.company.dia2_poo;
 
-public class Revista extends Livro{
+public class Revista extends Item{
     private int edicao;
 
     public Revista (String titulo, String autor, int anoPublicacao, int edicao) {
@@ -10,7 +10,11 @@ public class Revista extends Livro{
 
     @Override
     public void exibirDetalhes() {
-        super.exibirDetalhes();
-        System.out.println("Edicao: " + edicao);
+        System.out.println("Nome do livro: " + getTitulo() + "\nAutor: " + getAutor() + "\nAno de publicação: " + getAnoPublicacao() + "\nEdicao: " + edicao);
+    }
+
+    @Override
+    public String tipo() {
+        return "Revista";
     }
 }

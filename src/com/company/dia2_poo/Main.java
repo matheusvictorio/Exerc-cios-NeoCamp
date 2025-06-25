@@ -19,7 +19,7 @@ public class Main {
         System.out.println("Digite o título do livro que deseja buscar: ");
         String titulo = sc.nextLine();
 
-        Optional<Livro> resultado = biblioteca.buscarLivro(titulo);
+        Optional<Item> resultado = biblioteca.buscarLivro(titulo);
         if (resultado.isPresent()) {
             //pensei em usar direto o resultado.get(), porém isso apenas mostraria o toString da classe Livro e não seu metodo exibir detalhes
             System.out.println("Livro encontrado: ");
@@ -29,11 +29,21 @@ public class Main {
         }
 
         System.out.println("\n");
-        Livro revista = new Revista("Revista", "Autor revista", 2018, 12);
+        Item revista = new Revista("Revista", "Autor revista", 2018, 12);
         revista.exibirDetalhes();
         // por conta do polimorfismo não foi necessário nenhuma modificação
         biblioteca.adicionarLivro(revista);
         System.out.println("\nLivros na biblioteca:");
         biblioteca.listarLivros();
+
+        Item item1 = new Livro("itemlivro", "Matheus", 2010);
+        Item item2 = new Revista("itemrevista", "Gabi", 2023, 512);
+
+        item1.exibirDetalhes();
+        System.out.println("Tipo: " + item1.tipo());
+        System.out.println();
+
+        item2.exibirDetalhes();
+        System.out.println("Tipo: " + item2.tipo());
     }
 }

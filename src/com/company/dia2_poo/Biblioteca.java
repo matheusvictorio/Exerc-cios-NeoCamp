@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 public class Biblioteca {
-    ArrayList<Livro> livros = new ArrayList<>();
+    ArrayList<Item> itens = new ArrayList<>();
 
-    public void adicionarLivro(Livro livro) {
-        livros.add(livro);
+    public void adicionarLivro(Item item) {
+        itens.add(item);
     }
 
     public void listarLivros() {
-        for (Livro l : livros) {
-            l.exibirDetalhes();
+        for (Item i : itens) {
+            i.exibirDetalhes();
             System.out.println("\n");
         }
     }
 
-    public Optional<Livro> buscarLivro(String titulo) {
-        return livros.stream()
-                .filter(l -> l.getTitulo()
+    public Optional<Item> buscarLivro(String titulo) {
+        return itens.stream()
+                .filter(i -> i.getTitulo()
                         .equalsIgnoreCase(titulo))
                 .findFirst();
     }
