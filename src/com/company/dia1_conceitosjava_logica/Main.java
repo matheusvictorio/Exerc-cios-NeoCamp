@@ -1,4 +1,4 @@
-package com.company;
+package com.company.dia1_conceitosjava_logica;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -53,6 +53,8 @@ public class Main {
                     break;
                 default:
                     System.out.println("Opção inválida. Por favor, tente novamente.");
+
+                    sc.close();
             }
         } while (op != 0);
     }
